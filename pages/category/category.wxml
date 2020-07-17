@@ -1,0 +1,11 @@
+<!--pages/category/category.wxml-->
+<text>pages/category/category.wxml</text>
+<view>分类</view>
+
+<!-- 
+  界面渲染的整体流程:
+    1.在渲染层,宿主环境(微信客户端)会把WXML转化成对应的JS对象;
+    2.将JS对象再次转成真实DOM数,交由渲染层线程渲染;
+    3.数据变化时,逻辑层提供最新的变化数据,JS对象发生变化比较进行diff(different)算法对比
+    4.将最新变化的内容反映到真实的DOM树中,更新UI;
+ -->
