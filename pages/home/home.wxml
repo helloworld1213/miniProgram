@@ -1,2 +1,41 @@
 <!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<!-- 1.小程序的数据绑定 -->
+<view>Hello {{name}}</view>
+<view>yours age is : {{age}}</view>
+
+<!-- 2.列表展示 :wx:for-->
+<!-- <view wx:for="movies">{{item}}</view> -->
+<!-- 所以这里的用法和vue中是不一样的,遍历的引号里面要用Mustache语法 -->
+<!-- 使用wx:for="{{movies}}"会报错,在后面添加wx:key="key"就可以了-->
+<view wx:for="{{movies}}" wx:key="key">{{item.id}}.{{item.name}}</view>
+
+<!-- 3.事件监听改变data -->
+<view>counter: {{counter}}</view>
+<button size="mini" bindtap="reduce">-</button>
+<button size="mini" bindtap="add">+</button>
+
+<!-- 
+  编程范式:
+  1.命令式编程:原生操作DOM(这步命令做什么,下一步命令做什么)
+  2.声明式编程:Vue/React/Angular
+ -->
+
+ <!-- 
+   小程序的配置:
+   app.json:全局配置
+   page.json:页面配置
+   下面两个配置很少修改
+   project.config.json:项目配置文件,比如项目名称,appid等
+   sitemap.json:小程序搜索相关的
+  -->
+
+  <!-- 
+    创建pages的两种方式:
+    1.直接右键pages文件夹/新建文件夹(比如home)/新建page(名字是home),
+    这样就会在home文件夹下创建4个文件
+    2.在app.json中创建{
+      "pages:[
+        "pages/home/home"
+      ]"
+    },这样也可以创建pages,一般第二种方式用的比较多
+   -->
